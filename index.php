@@ -202,6 +202,8 @@ if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_R
                     $bot->deletePersistentMenu();
                 break;
 
+                case '':
+                    //Do nothing as this is an empty message
                 // Other message received
                 default:
                     $bot->send(new Message($message['sender']['id'], 'Sorry. I don’t understand you.'));
